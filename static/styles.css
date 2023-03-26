@@ -1,0 +1,14 @@
+body {
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    flex-flow: column;
+
+    align-items: center;
+}
