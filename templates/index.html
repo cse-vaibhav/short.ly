@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>URL Shortener</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/static/styles.css" rel="stylesheet">
-  </head>
+  
+  {% include "header.html" %}
+
   <body>
 
-    <h1>URL Shortener</h1>
+    {% include "navbar.html" %}
 
-    <div id="main">
+    <div id="app">
+      <form action="/" method="POST">
+        <div id="main">
+          <div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><img src="https://img.icons8.com/material-outlined/24/null/link--v1.png"/></span>
+                <input 
+                  type="text" 
+                  name="url" 
+                  class="form-control" 
+                  placeholder="Enter URL" 
+                  aria-label="Enter URL" 
+                  aria-describedby="basic-addon1" 
+                  pattern="^((ftp|http|https):\/\/)?[^ ]+$"
+                />
+              </div>
+          </div>
+          <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-primary">Shorten</button>
+            <a href="/display" class="btn btn-primary">Display All Links</a>
+          </div>
+        </div>
+      </form>
 
-      <div>
-        <form action="/" method="POST">
-          <input type="text" name="url" placeholder="Enter URL" />
-          <button type="submit">Shorten</button>
-        </form>
-      </div>
-      <a href="/display">Display All Links</a>
+      {% if copied %}
+
+        <p>Short Link copied to clipboard</p>
+
+      {% endif %}
+
     </div>
   </body>
 </html>

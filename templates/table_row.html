@@ -1,0 +1,10 @@
+<form action="/delete" method="POST">
+  <input type="hidden" name="url" value="{{ url }}">
+  <input type="hidden" name="short_url" value="{{ short_url }}">
+  <tr>
+    <th scope="row">{{ ind + 1}}</th>
+    <td>{{ url }}</td>
+    <td><a href="{{ short_url }}">{{ base_url }}{{ short_url }}</a></td>
+    <td><button type="submit" class="btn btn-primary" >Delete</button></td>
+  </tr>
+</form>

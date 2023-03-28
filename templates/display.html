@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include "header.html" %}
+
+    <body>
+
+        {% include "navbar.html" %}
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Original URL</th>
+              <th scope="col">Short URL</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            {% for url,short_url in urls %}
+                {% with ind=loop.index0, url=url, short_url=short_url, base_url=base_url %}
+                    {% include "table_row.html" %}
+                {% endwith %}
+            {% endfor %}
+          </tbody>
+        </table>
+
+    </body>
+</html>

@@ -2,8 +2,16 @@ body {
     height: 100vh;
 }
 
-h1 {
+.navbar-brand {
     text-align: center;
+}
+
+#app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
 }
 
 #main {
